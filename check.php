@@ -23,6 +23,12 @@ if(empty($port))
 }
 
 $ret = fsockopen('127.0.0.1', $port, $errno, $errstr, 5);
+if($ret) 
+{
+    $response = array('return' => true, 'port' => 'open');
+} else {
+    $response = array('return' => true, 'port' => 'closed');
+}
 send_and_exit($response);
 
 function send_and_exit($r)
