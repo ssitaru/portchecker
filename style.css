@@ -29,6 +29,7 @@ h1 {
 #main {
 	padding: 10px;
 	padding-left: 30px;
+	padding-bottom: 25px;
 }
 
 table {
@@ -42,5 +43,9 @@ th {
 }
 
 .online {
-	color: #7cfc00;
+	color: #2FBC00;
+}
+
+.offline {
+	
 }
