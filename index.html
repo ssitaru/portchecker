@@ -3,16 +3,20 @@
  <head>
      <link href="style.css" rel="stylesheet" type="text/css"/>
      <title>sitaru.eu heartbeat</title>
+     <script type="text/javascript" href="js/jquery.js"></script>
+     <script type="text/javascript" href="main.js"></script>
  </head>
 <body>
     <div id="container">
         <h1>Status of "sitaru.eu"</h1>
     <div id="main">
-        <table border="0">
+        <table border="0" id="maintable">
             <thead>
-                <th style="width: 20%">Address</th>
-                <th style="width: 30%">Service</th>
-                <th>Status</th>
+                <tr>
+                    <th style="width: 20%">Address</th>
+                    <th style="width: 30%">Service</th>
+                    <th>Status</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
