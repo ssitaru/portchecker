@@ -46,7 +46,7 @@ function initPortStatus(o)
 		}
 		if($('#'+td3_id).length <= 0) 
 		{
-			$('#'+tr_id).append('<td id="'+td1_id+'" class="checking">checking...</td>');
+			$('#'+tr_id).append('<td id="'+td3_id+'" class="checking">checking...</td>');
 		}
 	});
 }
