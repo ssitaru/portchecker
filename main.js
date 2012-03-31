@@ -12,7 +12,7 @@ function getPortStatus(o)
 		var current_service = v['service'];
 		var current_port = v['port'];
 		window.setTimeout(function(v){
-			return function() {
+			return function() { // strange closure bug, fixed
 				var postData = {port: v['port']};
 				$.post('/heartbeat/check.php', postData, function(data){
 					//alert(data);
@@ -24,7 +24,7 @@ function getPortStatus(o)
 					}
 				});
 			};
-		}(v), 2100*(k+1));
+		}(v), 2000*(k+1));
 	}
 	
 }
