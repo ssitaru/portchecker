@@ -16,7 +16,6 @@ should be straightforward:
 		touch .lastrequest
 * then edit js/main.js to point to your check.php relative to your webroot (the '/heartbeat/check.php' part)
 * adjust the services at the top of js/main.js (syntax is JSON)
-* adjust the H1 of index.html to have your server title in it :)
 
 frontend
 --------

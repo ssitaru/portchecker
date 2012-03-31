@@ -62,6 +62,7 @@ function initPortStatus(o)
 	});
 }
 $(document).ready(function(){
+	$('#container h1').text('Status of "'+window.location.hostname+'"');
 	initPortStatus(portlist);
 	window.setTimeout(getPortStatus(portlist),200);
 });
