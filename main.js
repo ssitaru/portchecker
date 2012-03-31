@@ -6,13 +6,10 @@ var portlist = [
 
 function getPortStatus(o) 
 {
-	var local_ports = o;
-	for(var k=0; k < o.length; k++) {
-		if(typeof(o[k]) != undefined) 
-		{
-			var local_ports = o;
-			window.setTimeout(function(){
-			var v = local_ports[k];
+	var len=o.length;
+	for(var k=0; k < len; k++) {
+		var v = o[k];
+		window.setTimeout(function(){
 			var postData = {port: v['port']};
 			$.post('/heartbeat/check.php', postData, function(data){
 				alert(data);
@@ -23,9 +20,7 @@ function getPortStatus(o)
 					$('#td3_'+v['service']).text('failed').addClass('offline');
 				}
 			});
-			}, 2000*(k+1));
-		}
-		
+		}, 2000*(k+1));
 	}
 	
 }
