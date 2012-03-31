@@ -8,7 +8,7 @@ function getPortStatus(o)
 {
 	window.setInterval(function(){
 		o.forEach(function(v, k){
-		var postData = {'port': v['port']};
+		var postData = {port: v['port']};
 		$.post('/heartbeat/check.php', postData, function(data){
 				if(data['return'])
 				{
