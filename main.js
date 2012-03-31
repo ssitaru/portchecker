@@ -6,19 +6,20 @@ var portlist = [
 
 function getPortStatus(o) 
 {
-	window.setInterval(function(){
-		o.forEach(function(v, k){
-		var postData = {port: v['port']};
-		$.post('/heartbeat/check.php', postData, function(data){
-				if(data['return'])
-				{
-					$('#td3_'+v['service']).text('ok').addClass('online');
-				} else {
-					$('#td3_'+v['service']).text('failed').addClass('offline');
-				}
-			});
+	for( var k=0; k<this .length; k++ ) {
+		window.setInterval(function(o,k){
+			var v = o[k];
+			var postData = {port: v['port']};
+			$.post('/heartbeat/check.php', postData, function(data){
+			if(data['return'])
+			{
+				$('#td3_'+v['service']).text('ok').addClass('online');
+			} else {
+				$('#td3_'+v['service']).text('failed').addClass('offline');
+			}
 		});
-	}, 2000);
+		}, 2000*(k+1));
+	}
 	
 }
 
