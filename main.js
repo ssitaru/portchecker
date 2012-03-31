@@ -63,5 +63,6 @@ function initPortStatus(o)
 }
 $(document).ready(function(){
 	initPortStatus(portlist);
+	window.setTimeout(getPortStatus(portlist),200);
 });
 
