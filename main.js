@@ -6,8 +6,8 @@ var portlist = [
 
 function getPortStatus(o) 
 {
-	o.forEach(function(v, k){
-		$.delay(2000);
+	window.setInterval(function(){
+		o.forEach(function(v, k){
 		var postData = {'port': v['port']};
 		$.post('/heartbeat/check.php', postData, function(data){
 				if(data['return'])
@@ -16,8 +16,10 @@ function getPortStatus(o)
 				} else {
 					$('#td3_'+v['service']).text('failed').addClass('offline');
 				}
+			});
 		});
-	});
+	}, 2000);
+	
 }
 
 function initPortStatus(o)
