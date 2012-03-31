@@ -6,18 +6,21 @@ var portlist = [
 
 function getPortStatus(o) 
 {
-	for( var k=0; k<this .length; k++ ) {
-		window.setInterval(function(o,k){
-			var v = o[k];
+	var local_ports = o;
+	for(var k=0; k < o.length; k++) {
+		if(o[k])
+		window.setInterval(function(){
+			var v = local_ports[k];
 			var postData = {port: v['port']};
 			$.post('/heartbeat/check.php', postData, function(data){
-			if(data['return'])
-			{
-				$('#td3_'+v['service']).text('ok').addClass('online');
-			} else {
-				$('#td3_'+v['service']).text('failed').addClass('offline');
-			}
-		});
+				alert(data);
+				if(data['return'] == true)
+				{
+					$('#td3_'+v['service']).text('ok').addClass('online');
+				} else {
+					$('#td3_'+v['service']).text('failed').addClass('offline');
+				}
+			});
 		}, 2000*(k+1));
 	}
 	
