@@ -9,7 +9,7 @@ body,html {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 
 h1 {
@@ -21,15 +21,20 @@ h1 {
 	background: -ms-linear-gradient(top,  rgba(214,214,214,1) 0%,rgba(186,186,186,1) 100%);
 	background: linear-gradient(top,  rgba(214,214,214,1) 0%,rgba(186,186,186,1) 100%);
 	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#bababa',GradientType=0 );*/
-	padding: 3px;
+	padding: 8px;
 	padding-left: 20px;
-	border-radius: 10px;	
+	border-radius: 15px;	
 }
 
 #main {
 	padding: 10px;
 	padding-left: 30px;
 	padding-bottom: 25px;
+}
+#footer {
+	margin-left: 85%;
+	padding-bottom: 5px;
+	font-size: 0.5em;
 }
 
 table {
@@ -48,4 +53,7 @@ th {
 
 .offline {
 	color: #890013;
+}
+a {
+	text-decoration: none;
 }
