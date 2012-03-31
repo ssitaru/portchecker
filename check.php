@@ -8,10 +8,10 @@ header('Content-type: application/json');
 $port = $_REQUEST['port'];
 
 $stat = stat('.lastrequest');
-if(($stat['mtime'] + 2) > time())
+if(($stat['mtime'] + 1) > time())
 {
 	$dt = time() - $stat['mtime'];
-	$err = "delta T is $dt - must be > 2";
+	$err = "delta T is $dt - must be > 1";
 	$response = array('return' => false, 'error' => $err);
 	send_and_exit($response);
 }

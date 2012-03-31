@@ -2,6 +2,8 @@ var portlist = [
 {'port': 22, 'service': 'SSH'},
 {'port': 21, 'service': 'FTP'},
 {'port': 25, 'service': 'SMTP'},
+{'port': 993, 'service': 'IMAP'},
+{'port': 3306, 'service': 'MySQL'},
 ];
 
 function getPortStatus(o) 
@@ -29,7 +31,7 @@ function getPortStatus(o)
 					}
 				});
 			};
-		}(v), 2000*(k+1));
+		}(v), 1000*(k+1));
 	}
 	
 }
