@@ -3,8 +3,8 @@
  <head>
      <link href="style.css" rel="stylesheet" type="text/css"/>
      <title>sitaru.eu heartbeat</title>
-     <script type="text/javascript" href="js/jquery.js"></script>
-     <script type="text/javascript" href="main.js"></script>
+     <script type="text/javascript" src="js/jquery.js"></script>
+     <script type="text/javascript" src="main.js"></script>
  </head>
 <body>
     <div id="container">
@@ -18,16 +18,11 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="maintbody">
                 <tr>
                    <td>:80</td>
                     <td>HTTP</td>
                    <td class="online">online</td>
-                </tr>
-                <tr>
-                   <td>:1337</td>
-                    <td>SSH</td>
-                   <td class="offline">offline</td>
                 </tr>
             </tbody>
         </table>
