@@ -11,18 +11,20 @@ function getPortStatus(o)
 		var v = o[k];
 		var current_service = v['service'];
 		var current_port = v['port'];
-		window.setTimeout(function(){
-			var postData = {port: current_port};
-			$.post('/heartbeat/check.php', postData, function(data){
-				//alert(data);
-				if(data['return'] == true)
-				{
-					$('#td3_'+current_service).text('ok').addClass('online');
-				} else {
-					$('#td3_'+current_service).text('failed').addClass('offline');
-				}
-			});
-		}, 2100*(k+1));
+		window.setTimeout(function(v){
+			return function() {
+				var postData = {port: v['port']};
+				$.post('/heartbeat/check.php', postData, function(data){
+					//alert(data);
+					if(data['return'] == true)
+					{
+						$('#td3_'+v['service']).text('ok').addClass('online');
+					} else {
+						$('#td3_'+v['service']).text('failed').addClass('offline');
+					}
+				});
+			};
+		}(v), 2100*(k+1));
 	}
 	
 }
