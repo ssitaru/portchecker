@@ -18,9 +18,14 @@ function getPortStatus(o)
 					//alert(data);
 					if(data['return'] == true)
 					{
-						$('#td3_'+v['service']).text('ok').addClass('online');
+						if(data['port'] == 'open')
+						{
+							$('#td3_'+v['service']).text('online').addClass('online');
+						} else {
+							$('#td3_'+v['service']).text('offline').addClass('offline');
+						}
 					} else {
-						$('#td3_'+v['service']).text('failed').addClass('offline');
+						$('#td3_'+v['service']).text('error').addClass('offline');
 					}
 				});
 			};
